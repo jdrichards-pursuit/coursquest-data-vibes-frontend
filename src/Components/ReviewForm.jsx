@@ -38,8 +38,8 @@ const ReviewForm = ({ user }) => {
     event.preventDefault();
 
     const url = reviewId
-      ? `http://localhost:3003/api/reviews/${reviewId}`
-      : "http://localhost:3003/api/reviews";
+      ? `${API}/api/reviews/${reviewId}`
+      : `${API}/api/reviews`;
 
     fetch(url, {
       method: reviewId ? "PUT" : "POST",
