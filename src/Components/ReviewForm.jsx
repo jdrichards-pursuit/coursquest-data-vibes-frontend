@@ -18,8 +18,8 @@ const ReviewForm = ({ user }) => {
     if (reviewId) {
       fetch(`${API}/${reviewId}`)
         .then((response) => response.json())
-        .then((data) => {
-          setNewOrUpdatedReview(data);
+        .then(({ review }) => {
+          setNewOrUpdatedReview({ ...newOrUpdatedReview, review });
         })
         .catch((error) => {
           console.error("Error fetching review details:", error.message);
