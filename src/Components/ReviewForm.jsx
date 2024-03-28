@@ -16,7 +16,7 @@ const ReviewForm = ({ user }) => {
 
   useEffect(() => {
     if (reviewId) {
-      fetch(`${API}/${reviewId}`)
+      fetch(`${API}/api/reviews/${reviewId}`)
         .then((response) => response.json())
         .then(({ review }) => {
           setNewOrUpdatedReview({ ...newOrUpdatedReview, review });
