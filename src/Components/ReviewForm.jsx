@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 const ReviewForm = ({ user }) => {
+  const API = import.meta.env.VITE_API_URL;
+
   const navigate = useNavigate();
   const { id, reviewId } = useParams();
 
@@ -14,7 +16,7 @@ const ReviewForm = ({ user }) => {
 
   useEffect(() => {
     if (reviewId) {
-      fetch(`http://localhost:3003/api/reviews/${reviewId}`)
+      fetch(`${API}/${reviewId}`)
         .then((response) => response.json())
         .then((data) => {
           setNewOrUpdatedReview(data);
