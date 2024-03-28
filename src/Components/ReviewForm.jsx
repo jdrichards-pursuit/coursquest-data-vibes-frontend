@@ -10,7 +10,7 @@ const ReviewForm = ({ user }) => {
   const [newOrUpdatedReview, setNewOrUpdatedReview] = useState({
     user_id: user && user.id ? user.id : undefined,
     course_id: id,
-    rating: "",
+    rating: 1,
     review: "",
   });
 
@@ -63,7 +63,7 @@ const ReviewForm = ({ user }) => {
           user_id: user.id,
           course_id: id,
           rating: "",
-          review: "",
+          review: 1,
         });
       })
       .then(() => {
@@ -107,7 +107,7 @@ const ReviewForm = ({ user }) => {
                   min="1"
                   max="5"
                   step="1"
-                  value={newOrUpdatedReview.rating}
+                  value={newOrUpdatedReview.rating.toString()}
                   onChange={handleTextChange}
                   className="border border-gray-300 p-2 rounded-md focus:outline-none focus:border-blue-500"
                 />
